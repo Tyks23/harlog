@@ -18,4 +18,6 @@ et arendada kirjuta konsooli:
 kui midagi on mainis muutunud siis peate tegema:
 
     git pull main(uuendab põhju projekti faile)
-    
+    kui esmakordselt pullite siis peate tavalisse konsooli kirjutama:
+        cd client (see on folder põhi folderi sees)
+        npm install
