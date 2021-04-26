@@ -1,7 +1,31 @@
 <script>
 import {push} from "svelte-spa-router";
 let roomExists = false;
+let user = {
+    name: "",
+    password: ""
+};
+async function login(){
+    const response = await fetch("http://localhost:3000/login", {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(user) // body data type must match "Content-Type" header
+        });
+        if(response.ok){
+            let token = await response.json();
+            sessionStorage.setItem("token", token.token);
+            push("/userpanel");
+        }
 
+}
 </script>
 <div class="container">
 {#if !roomExists}
@@ -18,9 +42,9 @@ let roomExists = false;
         <h2 class="title">Küsitluste haldamine</h2>
         <p>Logi sisse</p>
         <form class="container">
-        <input type="text" placeholder="Kasutajatunnus">
-        <input type="password" placeholder="Parool">
-        <input type="submit" value="SISENE" on:click|preventDefault="{() => {push('/userpanel')}}">     
+        <input type="text" placeholder="Kasutajatunnus" bind:value="{user.name}">
+        <input type="password" placeholder="Parool" bind:value="{user.password}">
+        <input type="submit" value="SISENE" on:click|preventDefault="{login}">     
         </form>
     </div>
     <input type="button" value="Registreeru" on:click|preventDefault="{() => {push('/registerpage')}}">
