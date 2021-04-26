@@ -4,11 +4,13 @@ import Homepage from "./routes/Homepage.svelte";
 import Userpanel from "./routes/Userpanel.svelte";
 import StartSession from "./routes/StartSession.svelte";
 import ResultsSession from "./routes/ResultsSession.svelte";
+import RegisterPage from "./routes/RegisterPage.svelte";
 
 const routes = {'/': Homepage,
 '/userpanel': Userpanel, 
 '/startsession': StartSession, 
-'/resultSsession': ResultsSession };
+'/resultssession': ResultsSession,
+'/registerpage': RegisterPage };
 </script>
 <div class="router-div">
 <Router {routes}/>
