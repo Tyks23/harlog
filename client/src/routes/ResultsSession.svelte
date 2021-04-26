@@ -1,6 +1,7 @@
 <script>  
 </script>
 <div class="container">
+    <h1>Harlog</h1>
     <form>
         <p>Vali grupp:</p>
         <ul>

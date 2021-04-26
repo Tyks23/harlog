@@ -3,6 +3,7 @@
     
     </script>
     <div class="container">
+        <h1>Harlog</h1>
         <h2 class="title">Registreeru</h2>
 
         <form class="container">
