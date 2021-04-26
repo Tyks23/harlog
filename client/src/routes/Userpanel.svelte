@@ -3,10 +3,10 @@
     
     </script>
     <div class="container">
-        <h1 class="title">Küsitluses osalemine</h1>
+        <h1 class="title">Küsitluste haldamine</h1>
         <button>MINU KÜSITLUSED</button>
         <button on:click|preventDefault="{() => {push('/startsession')}}">LOO UUS KÜSITLUS</button>
-        <button>TULEMUSED</button>
+        <button on:click|preventDefault="{() => {push('/resultssession')}}">TULEMUSED</button>
         <button>KÜSITLUSE LÄBIVIIMINE</button>
     </div>
     
