@@ -9,10 +9,10 @@
         <form>
             <p>Vali grupp:</p>
             <ul>
-                <li><input type="radio"> Example group 1</li>
-                <li><input type="radio"> Example group 2</li>
-                <li><input type="radio"> Example group 3</li>
-                <li><input type="radio"> Example group 4</li>
+                <li><input type="radio" name="group"> Example group 1</li>
+                <li><input type="radio" name="group"> Example group 2</li>
+                <li><input type="radio" name="group"> Example group 3</li>
+                <li><input type="radio" name="group"> Example group 4</li>
                 <li><input type="text"> </li>
                 <li><button>LOO GRUPP</button></li>
             </ul>       

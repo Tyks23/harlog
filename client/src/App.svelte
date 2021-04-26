@@ -3,8 +3,12 @@ import Router from "svelte-spa-router";
 import Homepage from "./routes/Homepage.svelte";
 import Userpanel from "./routes/Userpanel.svelte";
 import StartSession from "./routes/StartSession.svelte";
+import ResultsSession from "./routes/ResultsSession.svelte";
 
-const routes = {'/': Homepage,'/userpanel': Userpanel, '/startsession': StartSession };
+const routes = {'/': Homepage,
+'/userpanel': Userpanel, 
+'/startsession': StartSession, 
+'/resultSsession': ResultsSession };
 </script>
 <div class="router-div">
 <Router {routes}/>
