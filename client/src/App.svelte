@@ -5,12 +5,14 @@ import Userpanel from "./routes/Userpanel.svelte";
 import StartSession from "./routes/StartSession.svelte";
 import ResultsSession from "./routes/ResultsSession.svelte";
 import RegisterPage from "./routes/RegisterPage.svelte";
+import ActiveSession from "./routes/ActiveSession.svelte";
 
 const routes = {'/': Homepage,
 '/userpanel': Userpanel, 
 '/startsession': StartSession, 
 '/resultssession': ResultsSession,
-'/registerpage': RegisterPage };
+'/registerpage': RegisterPage,
+'/activesession': ActiveSession };
 </script>
 <div class="router-div">
 <Router {routes}/>
