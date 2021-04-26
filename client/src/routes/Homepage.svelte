@@ -23,7 +23,7 @@ let roomExists = false;
         <input type="submit" value="SISENE" on:click|preventDefault="{() => {push('/userpanel')}}">     
         </form>
     </div>
-    <input type="button" value="Registreeru">
+    <input type="button" value="Registreeru" on:click|preventDefault="{() => {push('/registerpage')}}">
 {:else}
 <div>
     <h1>Harlog</h1>
