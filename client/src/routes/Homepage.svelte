@@ -57,7 +57,7 @@ async function login(){
     <input type="text" placeholder="Nimi">
     <p>Sisesta email</p>
     <input type="text" placeholder="Email">
-    <input type="submit" value="SISENE">     
+    <input type="submit" value="SISENE" on:click|preventDefault="{() =>{push('/questionpage')}}">     
     </form>
 </div>
 {/if}
