@@ -33,7 +33,7 @@
 
         <form class="container">
         <p>Sisesta kasutajatunnus:</p>
-        <input type="text" placeholder="Kasutajatunnus" bind:value="{user.username}">
+        <input type="text" placeholder="Kasutajatunnus" bind:value="{user.name}">
         <p>Sisesta email:</p>
         <input type="text" placeholder="Email" bind:value="{user.email}">
         <p>Sisesta parool:</p>
