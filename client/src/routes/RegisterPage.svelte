@@ -24,7 +24,6 @@
         if(response.ok){
             push("/");
         }
-
     }
     </script>
     <div class="container">
