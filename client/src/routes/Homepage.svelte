@@ -24,7 +24,7 @@ async function login(){
         });
         if(response.ok){
             let token = await response.json();
-            sessionStorage.setItem("token", token.token);
+            sessionStorage.setItem("token", `Bearer ${token.token}`);
             push("/userpanel");
         }
 }
