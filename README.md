@@ -21,3 +21,11 @@ kui midagi on mainis muutunud siis peate tegema:
     kui esmakordselt pullite siis peate tavalisse konsooli kirjutama:
         cd client (see on folder põhi folderi sees)
         npm install
+
+
+librarys-
+    postgre:
+        Universal Unique Identifier defined by RFC 4122(uuid-ossp)
+    express:
+        JSON Web Tokens
+        express-validator
