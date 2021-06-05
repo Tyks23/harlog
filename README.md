@@ -29,3 +29,7 @@ librarys-
     express:
         JSON Web Tokens
         express-validator
+
+
+
+ALTER TABLE users DROP COLUMN bad_requests;
