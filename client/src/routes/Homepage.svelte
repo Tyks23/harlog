@@ -1,4 +1,6 @@
+
 <script>
+//test    
 import {push} from "svelte-spa-router";
 let roomExists = false;
 let user = {
