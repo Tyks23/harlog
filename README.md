@@ -23,6 +23,8 @@ kui midagi on mainis muutunud siis peate tegema:
         npm install
 
 
+front-end serveri jooksutamise command: npm run dev
+
 librarys-
     postgre:
         Universal Unique Identifier defined by RFC 4122(uuid-ossp)
