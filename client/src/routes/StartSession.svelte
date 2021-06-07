@@ -58,7 +58,7 @@
         });
         if(response.ok){
            
-            //push("/");
+            push("/activesession");
         }
     }
 
@@ -90,6 +90,7 @@
             <h1 class="title">Alusta küsitlust:</h1>
             <p>Tegevuse nimi:</p>
             <input type="text" placeholder="Tegevuse nimi" bind:value="{activity.activity_name}">
+            <input type="text" placeholder="Võti">
         </form>
         <form>
             <p>Vali grupp millega tegevust alustada:</p>
