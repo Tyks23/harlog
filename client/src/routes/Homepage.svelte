@@ -10,6 +10,14 @@ let user = {
 let quizParticipant = {
 
 };
+
+let activity = {
+
+};
+
+let roomKey = {
+    roomkey : ''
+};
 async function login(){
     const response = await fetch("http://localhost:3000/login", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -53,6 +61,29 @@ async function enterQuiz(){
             push("/questionpage");
         }
 }
+
+async function getRoomkey(){
+    const response = await fetch("http://localhost:3000/getroomkey", {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(roomKey) // body data type must match "Content-Type" header
+        });
+        if(response.ok){
+            roomExists = true;
+            quizParticipant.activity_id = (await response.json()).activity_id;
+
+        }
+}
+
+
 </script>
 <div class="container">
 {#if !roomExists}
@@ -61,8 +92,8 @@ async function enterQuiz(){
         <h2 class="title">Küsitluses osalemine</h2>
         <p>Sisesta ruumivõti:</p>
         <form class="container">
-        <input type="text" placeholder="Võti">
-        <button on:click|preventDefault="{() =>{roomExists=true}}">SISESTA</button>
+        <input type="text" placeholder="Võti" bind:value="{roomKey.roomkey}">
+        <button on:click|preventDefault={getRoomkey}>SISESTA</button>
         </form>
     </div>
     <div>

@@ -15,7 +15,7 @@ et arendada kirjuta konsooli:
     siis github.com-is pull request sama branchi peale
     ja ss ma vaatan kas ma tahan seda main projekti mergeda
 
-kui midagi on mainis muutunud siis peate tegema:
+kui midagi on mainis muutunud siis peate tegema:chec
 
     git pull main(uuendab põhju projekti faile)
     kui esmakordselt pullite siis peate tavalisse konsooli kirjutama:
