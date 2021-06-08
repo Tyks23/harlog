@@ -8,6 +8,8 @@ import RegisterPage from "./routes/RegisterPage.svelte";
 import ActiveSession from "./routes/ActiveSession.svelte";
 import QuestionPage from "./routes/QuestionPage.svelte";
 import ResultsGroup from "./routes/ResultsGroup.svelte";
+import ResultsActivity from "./routes/ResultsActivity.svelte";
+import ResultsParticipant from "./routes/ResultsParticipant.svelte";
 
 const routes = {'/': Homepage,
 '/userpanel': Userpanel, 
@@ -16,7 +18,9 @@ const routes = {'/': Homepage,
 '/registerpage': RegisterPage,
 '/activesession': ActiveSession,
 '/questionpage' : QuestionPage,
-'/resultsgroup' : ResultsGroup };
+'/resultsgroup' : ResultsGroup,
+'/resultsgroup' : ResultsActivity,
+'/resultsgroup' : ResultsParticipant };
 </script>
 <div class="router-div">
 <Router {routes}/>
