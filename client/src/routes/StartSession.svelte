@@ -57,7 +57,8 @@
             body: JSON.stringify(activity) // body data type must match "Content-Type" header
         });
         if(response.ok){
-           
+            
+            sessionStorage.setItem('roomkey', activity.roomkey);
             push("/activesession");
         }
     }
@@ -90,7 +91,7 @@
             <h1 class="title">Alusta küsitlust:</h1>
             <p>Tegevuse nimi:</p>
             <input type="text" placeholder="Tegevuse nimi" bind:value="{activity.activity_name}">
-            <input type="text" placeholder="Võti">
+            <input type="text" placeholder="Võti" bind:value="{activity.roomkey}">
         </form>
         <form>
             <p>Vali grupp millega tegevust alustada:</p>
