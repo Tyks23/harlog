@@ -1,5 +1,13 @@
 <script>
+import ResultComponent from "../components/ResultComponent.svelte";
 
+let displayGroup = true;
+let displayActivity = false;
+let displayParticipant = false;
+
+displayGroup = !displayActivity
+
+let selectedGroupObject = '';
 async function listGroup(){
         const response = await fetch("http://localhost:3000/listgroup", {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -19,11 +27,15 @@ async function listGroup(){
             //push("/");
         }
     };
+async function getActivities(){
+    
+}; 
 </script>
 <div class="container">
+    {#if displayGroup}
     <h1>Harlog</h1>
         <form>
-            <h1 class="title">Alusta küsitlust:</h1>
+            <h1 class="title">Tulemuste esitamine:</h1>
             
         </form>
         <form>
@@ -33,12 +45,23 @@ async function listGroup(){
                 <p>Loading groups...</p>
                 {:then groups}
                 {#each groups as group}
-                <button>{group.group_name}</button>
+                <button on:click="{() => {selectedGroupObject = group; displayGroup = false; displayActivity = true; displayParticipant = false;}}">{group.group_name}</button>
                 
                 {/each}
                 {/await}                
             </ul>             
         </form>
+        {/if}
+        {#if displayActivity}
+        <p>{selectedGroupObject.group_name}</p>
+        <ResultComponent componentObject = {selectedGroupObject}></ResultComponent>
+
+
+        {/if}
+
+        {#if displayParticipant}
+
+        {/if}
     </div>
 
 
