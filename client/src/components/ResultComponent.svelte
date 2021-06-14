@@ -1,6 +1,6 @@
 <script>
     export let componentObject;
-
+//34
 
     let activityEmotions = {
         firstEmot : 0,
