@@ -1,5 +1,5 @@
 <script>
-
+import 'charts.css';
 let selectedGroup = {
     group_id : sessionStorage.getItem('group_id')
 };
@@ -44,7 +44,7 @@ let activityEmotions = {
         });
             let counter = 0;
         data.forEach(row => {
-            activityEmotions.emotion1 += row.answer[0] + (6 - row.answer[1]);
+            activityEmotions.emotion1 += activities[activity].answer[0]  + (6 - activities[activity].answer[1]);
             activityEmotions.emotion2 += row.answer[2] + (6 - row.answer[3]);
             activityEmotions.emotion3 += row.answer[4] + row.answer[5];
             counter += 2;
@@ -60,8 +60,36 @@ let activityEmotions = {
 </script>
 <div class='container'>
     <h1>Harlog</h1>
-    
-    
+
+    {#each Object.keys(activities) as activity}
+        <p>{activities[activity].name}</p>
+        <table id="bar-example-6" class="charts-css bar show-labels">
+            <caption> Bar Example #6 </caption>
+            <thead>
+              <tr>
+                <th scope="col"> Year </th>
+                <th scope="col"> Progress </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"> emotsioon 1 </th>
+                <td style="--size:{activityEmotions.emotion1};"><span class="data">{activityEmotions.emotion1}</span></td>
+              </tr>
+              <tr>
+                <th scope="row"> emotsioon 2 </th>
+                <td style="--size:0.4;"></td>
+              </tr>
+              <tr>
+                <th scope="row"> emotsioon 3 </th>
+                <td style="--size:0.6;"></td>
+              </tr>
+            </tbody>
+          </table>
+        <button></button>
+                              
+    {/each}
+
     
 </div>
 
@@ -70,5 +98,10 @@ let activityEmotions = {
 .container {  
     display: flex;
     flex-direction: column;
+}
+#bar-example-6 {
+  height: 200px;
+  max-width: 300px;
+  margin: 0 auto;
 }
 </style>
