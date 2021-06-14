@@ -1,6 +1,12 @@
 <script>
     export let componentObject;
 
+
+    let activityEmotions = {
+        firstEmot : 0,
+        secondEmot : 0,
+        thirdEmot : 0
+    };
     async function getActivities(){
         const response = await fetch("http://localhost:3000/getactivities", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -19,6 +25,17 @@
         if(response.ok){
             let data = await response.json();
             console.log(data);
+            let counter = 0;
+        data.array.forEach(row => {
+            activityEmotions.firstEmot = row.answer[0] + (6 - row.answer[1]);
+            activityEmotions.secondEmot = row.answer[2] + (6 - row.answer[3]);
+            activityEmotions.thirdEmot = row.anser[4] + row.answer[5];
+            counter += 2;
+        });    
+            activityEmotions.firstEmot /= counter;
+            activityEmotions.secondEmot /= counter;
+            activityEmotions.thirdEmot /= counter;
+            console.log(activityEmotions);
         }
     }
 
