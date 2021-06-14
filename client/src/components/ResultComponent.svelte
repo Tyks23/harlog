@@ -26,7 +26,7 @@
             let data = await response.json();
             console.log(data);
             let counter = 0;
-        data.array.forEach(row => {
+        data.rows.forEach(row => {
             activityEmotions.firstEmot = row.answer[0] + (6 - row.answer[1]);
             activityEmotions.secondEmot = row.answer[2] + (6 - row.answer[3]);
             activityEmotions.thirdEmot = row.anser[4] + row.answer[5];

@@ -19,8 +19,8 @@ const routes = {'/': Homepage,
 '/activesession': ActiveSession,
 '/questionpage' : QuestionPage,
 '/resultsgroup' : ResultsGroup,
-'/resultsgroup' : ResultsActivity,
-'/resultsgroup' : ResultsParticipant };
+'/resultsactivity' : ResultsActivity,
+'/resultsparticipant' : ResultsParticipant };
 </script>
 <div class="router-div">
 <Router {routes}/>
