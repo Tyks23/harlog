@@ -31,7 +31,8 @@ librarys-
     express:
         JSON Web Tokens
         express-validator
-
+    front-end:
+        chartscss
 
 
 ALTER TABLE users DROP COLUMN bad_requests;

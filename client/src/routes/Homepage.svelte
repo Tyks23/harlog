@@ -105,7 +105,7 @@ async function getRoomkey(){
         <input type="submit" value="SISENE" on:click|preventDefault="{login}">     
         </form>
     </div>
-    <input type="button" value="Registreeru" on:click|preventDefault="{() => {push('/registerpage')}}">
+    <input type="button" value="REGISTREERU" on:click|preventDefault="{() => {push('/registerpage')}}">
 {:else}
 <div>
     <h1>Harlog</h1>

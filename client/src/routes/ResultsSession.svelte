@@ -1,5 +1,11 @@
 <script>
+import { push } from "svelte-spa-router";
 
+
+
+let selectedGroup = {
+    group_id : sessionStorage.getItem('group_id')
+};
 async function listGroup(){
         const response = await fetch("http://localhost:3000/listgroup", {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -19,11 +25,14 @@ async function listGroup(){
             //push("/");
         }
     };
+async function getActivities(){
+    
+}; 
 </script>
 <div class="container">
     <h1>Harlog</h1>
         <form>
-            <h1 class="title">Alusta küsitlust:</h1>
+            <h1 class="title">Tulemuste esitamine:</h1>
             
         </form>
         <form>
@@ -33,8 +42,8 @@ async function listGroup(){
                 <p>Loading groups...</p>
                 {:then groups}
                 {#each groups as group}
-                <button>{group.group_name}</button>
-                
+                <button on:click="{() => {sessionStorage.setItem('group_id', group.group_id); push('/resultsgroup')}}">{group.group_name}</button> 
+                              
                 {/each}
                 {/await}                
             </ul>             
