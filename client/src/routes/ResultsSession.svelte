@@ -1,24 +1,57 @@
-<script>  
-</script>
-<div class="container">
-    <h1>Harlog</h1>
-    <form>
-        <p>Vali grupp:</p>
-        <ul>
-            <li><input type="radio" name="group"> Example group 1</li>
-            <li><input type="radio" name="group"> Example group 2</li>
-            <li><input type="radio" name="group"> Example group 3</li>
-            <li><input type="radio" name="group"> Example group 4</li>
-        </ul>       
-        <button>TULEMUSED</button>
-    </form>
-</div>
-
-
-<style>
-.container {  
-    display: flex;
-    flex-direction: column;
-}
+<script>
+    import { push } from "svelte-spa-router";
+    let selectedGroup = {
+        group_id : sessionStorage.getItem('group_id')
+    };
+    async function listGroup(){
+            const response = await fetch("http://localhost:3000/listgroup", {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization' : sessionStorage.getItem('token')
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow', // manual, *follow, error
+                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            });  
+            if(response.ok){
+                return await response.json();
+                //push("/");
+            }
+        };
+    async function getActivities(){
+        
+    }; 
+    </script>
+    <div class="container">
+        <h1>Harlog</h1>
+            <form>
+                <h1 class="title">Tulemuste esitamine:</h1>
+                
+            </form>
+            <form>
+                <p>Vali grupp mille tulemusi soovid näha:</p>
+                <ul class = "groupList">
+                    {#await listGroup()}
+                    <p>Loading groups...</p>
+                    {:then groups}
+                    {#each groups as group}
+                    <button on:click="{() => {sessionStorage.setItem('group_id', group.group_id); push('/resultsgroup')}}">{group.group_name}</button> 
+                                  
+                    {/each}
+                    {/await}                
+                </ul>             
+            </form>
+        </div>
     
-</style>
+    
+    <style>
+    .container {  
+        display: flex;
+        flex-direction: column;
+    }
+        
+    </style>
