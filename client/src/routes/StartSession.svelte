@@ -130,7 +130,7 @@
             return await response.json();
             //push("/");
         }
-    };
+    }
     </script>
     <div class="container">
         <img src="../pictures\logo.png" alt="Harlog logo">

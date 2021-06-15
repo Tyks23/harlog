@@ -15,7 +15,7 @@ et arendada kirjuta konsooli:
     siis github.com-is pull request sama branchi peale
     ja ss ma vaatan kas ma tahan seda main projekti mergeda
 
-kui midagi on mainis muutunud siis peate tegema:
+kui midagi on mainis muutunud siis peate tegema:chec
 
     git pull main(uuendab põhju projekti faile)
     kui esmakordselt pullite siis peate tavalisse konsooli kirjutama:
@@ -23,13 +23,16 @@ kui midagi on mainis muutunud siis peate tegema:
         npm install
 
 
+front-end serveri jooksutamise command: npm run dev
+
 librarys-
     postgre:
         Universal Unique Identifier defined by RFC 4122(uuid-ossp)
     express:
         JSON Web Tokens
         express-validator
-
+    front-end:
+        chartscss
 
 
 ALTER TABLE users DROP COLUMN bad_requests;

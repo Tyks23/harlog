@@ -3,8 +3,11 @@
     let selectedGroup = {
         group_id: sessionStorage.getItem("group_id"),
     };
+
     let activities = {};
+
     let data;
+
     let activityEmotions = {
         emotion1: 0,
         emotion2: 0,
@@ -27,8 +30,10 @@
                     newArray[i] = 6 - x;
                 }
             });
+
         return newArray.reduce((acc, cur) => acc + cur, 0) / counter;
     };
+
     (async function getActivities() {
         const response = await fetch("http://localhost:3000/getactivities", {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -57,14 +62,19 @@
                 activities[activity_id].answers.push(answer);
                 activities[activity_id].name = activity_name;
             });
+
             let counter = 0;
+
             Object.entries(activities).forEach(([, value]) => {
                 const { answers } = value;
+
                 value.emotion1 = getAvgOfCols(answers, 0, 1, [false, true]);
                 value.emotion2 = getAvgOfCols(answers, 2, 3, [false, true]);
                 value.emotion3 = getAvgOfCols(answers, 4, 5);
             });
+
             console.log(activities);
+
             console.log(activityEmotions);
             activityEmotions.emotion1 /= counter;
             activityEmotions.emotion2 /= counter;

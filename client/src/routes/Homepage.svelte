@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
-//test    
+//test    123
 import {push} from "svelte-spa-router";
 let roomExists = false;
 let user = {
@@ -10,8 +10,11 @@ let user = {
 let quizParticipant = {
 
 };
+
 let activity = {
+
 };
+
 let roomKey = {
     roomkey : ''
 };
@@ -132,8 +135,13 @@ async function getRoomkey(){
         }
 }
 
-</script> 
 
+
+
+
+
+
+</script>
 <table class="wrapper">
 <div class="container">
     <div class="padding">
@@ -146,7 +154,7 @@ async function getRoomkey(){
         <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Sisesta ruumivõti:</p>
         <form class="container">
         <input type="text" placeholder="Võti" bind:value="{roomKey.roomkey}">
-        <button on:click|preventDefault= {getRoomkey}>SISESTA</button>
+        <button on:click|preventDefault={getRoomkey}>SISESTA</button>
         </form>
     </div>
     <div>

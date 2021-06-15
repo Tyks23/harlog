@@ -7,6 +7,9 @@ import ResultsSession from "./routes/ResultsSession.svelte";
 import RegisterPage from "./routes/RegisterPage.svelte";
 import ActiveSession from "./routes/ActiveSession.svelte";
 import QuestionPage from "./routes/QuestionPage.svelte";
+import ResultsGroup from "./routes/ResultsGroup.svelte";
+import ResultsActivity from "./routes/ResultsActivity.svelte";
+import ResultsParticipant from "./routes/ResultsParticipant.svelte";
 
 const routes = {'/': Homepage,
 '/userpanel': Userpanel, 
@@ -14,7 +17,10 @@ const routes = {'/': Homepage,
 '/resultssession': ResultsSession,
 '/registerpage': RegisterPage,
 '/activesession': ActiveSession,
-'/questionpage' : QuestionPage };
+'/questionpage' : QuestionPage,
+'/resultsgroup' : ResultsGroup,
+'/resultsactivity' : ResultsActivity,
+'/resultsparticipant' : ResultsParticipant };
 </script>
 <div class="router-div">
 <Router {routes}/>
