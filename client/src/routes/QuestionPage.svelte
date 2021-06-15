@@ -39,7 +39,7 @@
       <img src="../pictures\logo.png" alt="Harlog logo">
       <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Pöörasin sellele tegevusele enda täieliku tähelepanu</p>
       <div  class="slidecontainer">
-        <input type="range" min="1" max="6" step="0.1" bind:value="{rangeArr.answer1}">
+        <input type="range" min="1" max="6" bind:value="{rangeArr.answer1}">
         
       </div>
       <div class="slidecontainer">
@@ -49,7 +49,7 @@
       </div>  
       <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Ma ainult teesklesin, et osalesin selles tegevuses</p>
       <div class="slidecontainer">
-        <input type="range" min="1" max="6" step="0.1" bind:value="{rangeArr.answer2}">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer2}">
       </div>
       <div class="slidecontainer">
         
@@ -58,7 +58,7 @@
       </div>  
       <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Mulle meeldis õppida uusi asju seoses selle tegevusega</p>
       <div class="slidecontainer">
-        <input type="range" min="1" max="6" step="0.1" bind:value="{rangeArr.answer3}">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer3}">
       </div>
       <div class="slidecontainer">
         
@@ -68,7 +68,7 @@
       <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Tundsin ennast seoses tegevusega heitunult(???)</p>
       <div class="slidecontainer">
         
-        <input type="range" min="1" max="6" step="0.1" bind:value="{rangeArr.answer4}">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer4}">
       </div>
       <div class="slidecontainer">
         
@@ -78,7 +78,7 @@
       <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Tegevus aitas mul seda teemat õppida</p>
       <div class="slidecontainer">
         
-        <input type="range" min="1" max="6" step="0.1" bind:value="{rangeArr.answer5}">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer5}">
       </div>
       <div class="slidecontainer">
         
@@ -88,7 +88,7 @@
       <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">See tegevus pani mind teemast uut moodi mõtlema</p>
       <div class="slidecontainer">
         
-        <input type="range" min="1" max="6" step="0.1" bind:value="{rangeArr.answer6}">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer6}">
       </div>
       <div class="slidecontainer">
         
