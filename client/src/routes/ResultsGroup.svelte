@@ -1,5 +1,6 @@
 <script>
     import "charts.css";
+import { push } from "svelte-spa-router";
     let selectedGroup = {
         group_id: sessionStorage.getItem("group_id"),
     };
@@ -124,7 +125,7 @@
                 </tr>
             </tbody>
         </table>
-        <button />
+        <button on:click="{() => {sessionStorage.setItem('activity_id', activity); push('/resultsactivity');}}">OSALEJATE TULEMUSED</button>
     {/each}
 </div>
 
