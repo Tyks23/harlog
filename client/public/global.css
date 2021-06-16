@@ -106,6 +106,18 @@ input[type=submit], input[type=button] {
 	margin-bottom: 10px;
 	margin-top:5px;
 }
+input[type=submit]:hover{
+	background-color: #543F4E;
+}
+input[type=button]:hover{
+	background-color: #543F4E;
+}
+input[type=submit]:not(:disabled):active {
+	background-color: #BCABAE;
+}
+input[type=button]:not(:disabled):active {
+	background-color: #BCABAE;
+}
 
 /*button:disabled {
 	color: #999;
@@ -116,7 +128,8 @@ button:not(:disabled):active {
 }
 
 button:focus {
-	border-color: #BCABAE;
+	border-color: #60495A;
+	outline: none !important;
 }
 button:hover{
 	background-color: #543F4E;
