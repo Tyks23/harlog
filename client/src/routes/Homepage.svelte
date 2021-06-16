@@ -16,7 +16,7 @@ let activity = {
 };
 
 let roomKey = {
-    roomkey : ''
+    roomkey : ""
 };
 async function login(){
     let haveErrors = false;
@@ -116,8 +116,9 @@ async function enterQuiz(){
     haveErrorsQuiz = false;
 }
 async function getRoomkey(){
+    
     let haveErrorsRoom = false;
-    if(roomKey === ''){
+    if(roomKey.roomkey === ""|| roomKey.roomkey=== "undefined"){
         document.getElementById('error-room').innerHTML = "Sisesta ruumi võti!"
         haveErrorsRoom= true;
     }
@@ -142,7 +143,11 @@ async function getRoomkey(){
                 roomExists = true;
                 quizParticipant.activity_id = (await response.json()).activity_id;
             }
-        }
+            if(response.status === 404){
+                document.getElementById('error-room').innerHTML = "Vale ruumi võti!"
+                roomExists = false;
+            }
+    }
     haveErrorsRoom = false;            
 }
 
@@ -170,7 +175,7 @@ async function getRoomkey(){
     </div>
     <div>
         <h2 class="title">Õpetaja:</h2>
-        <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Logi sisse</p>
+        <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Logi sisse:</p>
         <form class="container">
         <input type="text" placeholder="Kasutajatunnus" bind:value="{user.name}"><span class="errormsg" id="error-user"></span>
         <input type="password" placeholder="Parool" bind:value="{user.password}"><span class="errormsg" id="error-password"></span><span class="errormsg" id="error-login"></span>
