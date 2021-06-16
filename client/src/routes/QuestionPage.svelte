@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>
     import {push} from "svelte-spa-router";
 
@@ -33,40 +34,101 @@
     }
     
     </script>
-    <div class="container">
-        <h1>Harlog</h1>
-
-        <div class="slidecontainer">
-            <p>I pöörasin sellele tegevusele enda täieliku tähelepanu</p>
-            <input type="range" min="1" max="6" bind:value="{rangeArr.answer1}">
-          </div>
-          <div class="slidecontainer">
-            <p>Ma ainult teesklesin, et osalesin selles tegevuses</p>
-            <input type="range" min="1" max="6" bind:value="{rangeArr.answer2}">
-          </div>
-          <div class="slidecontainer">
-            <p>Mulle meeldis õppida uusi asju seoses selle tegevusega</p>
-            <input type="range" min="1" max="6" bind:value="{rangeArr.answer3}">
-          </div>
-          <div class="slidecontainer">
-            <p>Tundsin ennast seoses tegevusega heitunult(???)</p>
-            <input type="range" min="1" max="6" bind:value="{rangeArr.answer4}">
-          </div>
-          <div class="slidecontainer">
-            <p>Tegevus aitas mul seda teemat õppida</p>
-            <input type="range" min="1" max="6" bind:value="{rangeArr.answer5}">
-          </div>
-          <div class="slidecontainer">
-            <p>See tegevus pani mind teemast uut moodi mõtlema</p>
-            <input type="range" min="1" max="6" bind:value="{rangeArr.answer6}">
-          </div>
-
-        <button on:click|preventDefault="{sendAnswer}">LÕPETA</button>
+    
+    <div class="questioncontainer">
+      <img src="../pictures\logo.png" alt="Harlog logo">
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Pühendusin ainult õppimisele</p>
+      <div  class="slidecontainer">
+        <input type="range" min="1" max="6" bind:value="{rangeArr.answer1}">
+        
+      </div>
+      <div class="slidecontainer">
+        
+        <p class="leftmarking">Ei nõustu</p>
+        <p class="rightmarking">Nõustun</p>
+      </div>  
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Teesklesin osalemist</p>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer2}">
+      </div>
+      <div class="slidecontainer">
+        
+        <p class="leftmarking">Ei nõustu</p>
+        <p class="rightmarking">Nõustun</p>
+      </div>  
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Mulle meeldis õppida</p>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer3}">
+      </div>
+      <div class="slidecontainer">
+        
+        <p class="leftmarking">Ei nõustu</p>
+        <p class="rightmarking">Nõustun</p>
+      </div>  
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selle tegevuse ajal kartsin pisut / olin segaduses</p>
+      <div class="slidecontainer">
+        
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer4}">
+      </div>
+      <div class="slidecontainer">
+        
+        <p class="leftmarking">Ei nõustu</p>
+        <p class="rightmarking">Nõustun</p>
+      </div>  
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Sain õpitust aru</p>
+      <div class="slidecontainer">
+        
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer5}">
+      </div>
+      <div class="slidecontainer">
+        
+        <p class="leftmarking">Ei nõustu</p>
+        <p class="rightmarking">Nõustun</p>
+      </div>  
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Sain midagi uut teada / harjutada</p>
+      <div class="slidecontainer">
+        
+        <input type="range" min="1" max="6"  bind:value="{rangeArr.answer6}">
+      </div>
+      <div class="slidecontainer">
+        
+        <p class="leftmarking">Ei nõustu</p>
+        <p class="rightmarking">Nõustun</p>
+      </div>  
+      
+      <button style="margin-top: 10px;" on:click|preventDefault="{sendAnswer}">LÕPETA</button>
+      
+      
     </div>
     
     <style>
-    .container {  
-        display: flex;
-        flex-direction: column;
+    /*span{
+      font-family: 'Montserrat', sans-serif;
+      color:#60495A;
+      font-size: 75%;
+      vertical-align: text-bottom;
+    }*/
+    .leftmarking{
+      font-family: 'Montserrat', sans-serif;
+      color:#60495A;
+      font-size: 75%;
+      
+      text-align: left; 
+      width:49%; 
+      display: inline-block;
+      margin-bottom: 10px;
+	    margin-top: 5px;
+    }
+    .rightmarking{
+      font-family: 'Montserrat', sans-serif;
+      color:#60495A;
+      font-size: 75%;
+      text-align: right; 
+      width:50%;  
+      display: inline-block;
+      margin-bottom: 10px;
+	    margin-top: 5px;
+      
+      
     }
     </style>

@@ -4,7 +4,11 @@
     let activity = {
     roomkey : sessionStorage.getItem('roomkey')
     };
-
+    if(sessionStorage.getItem("token") == null) {
+           
+           // Redirect to login page
+           push("/");
+       }
     async function deleteRoomkey(){       
         const response = await fetch("http://localhost:3000/deleteroomkey", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -26,10 +30,9 @@
             push("/userpanel");
         }
     }
-
     </script>
     <div class="container">
-        <h1>Harlog</h1>
+        <img src="../pictures\logo.png" alt="Harlog logo">
         <h2 class="title">Aktiivne küsitlus</h2>
         <p>Toa kood: </p>
         <h2 class="boxtext">{sessionStorage.getItem('roomkey')}</h2>
@@ -38,14 +41,18 @@
     </div>
     
     <style>
-    .container {  
-        display: flex;
-        flex-direction: column;
-    }
+    
+    
     .boxtext{       
-        width: 300px;
-        border: 15px solid rgb(92, 0, 128);
+        width: 180px;
+        border: 15px solid #56A3A6;
         padding: 50px;
-        margin: 20px;
+        margin: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #084C61;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
     }
     </style>

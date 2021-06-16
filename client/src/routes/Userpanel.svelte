@@ -1,21 +1,29 @@
+
+
 <script>
     import {push} from "svelte-spa-router";
-import { bubble } from "svelte/internal";
-    
+    console.log(sessionStorage);
+    if(sessionStorage.getItem("token") == null) {
+           
+           // Redirect to login page
+           push("/");
+       }
+    function logout(){
+        sessionStorage.removeItem("token");
+        push("/");
+    }
     </script>
     <div class="container">
-        <h1>Harlog</h1>
-        <h1 class="title">Küsitluste haldamine</h1>
-        <button on:click|preventDefault="{() => {push('/startsession')}}">LOO UUS KÜSITLUS</button>
+        <img src="../pictures\logo.png" alt="Harlog logo">
+        <h2 class="title">Sessiooni haldamine</h2>
+        
+        <button on:click|preventDefault="{() => {push('/startsession')}}">LOO UUS SESSIOON</button>
         <button on:click|preventDefault="{() => {push('/resultssession')}}">TULEMUSED</button>
-        <button>LOGI VÄLJA</button>
+        <button on:click|preventDefault="{logout}">Logi välja</button>
     </div>
     
     
     <style>
-    .container {  
-        display: flex;
-        flex-direction: column;
-    }
+
         
     </style>

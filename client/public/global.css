@@ -1,15 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Fjalla+One&family=Montserrat:wght@600&display=swap');
+
 html, body {
 	position: relative;
-	width: 100%;
+	max-width: 380px;
+	
+	width: 380px;
 	height: 100%;
+	background-color: #FBFBFB;
+	text-align: center;
+
+	
+    
+	
+	margin: 0;
+	padding: 0;
+	
+}
+html{
+	
+    margin:0 auto;
 }
 
 body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	color: #084C61;
+	
+
+	padding: 0 0 0 0;
+	/*box-sizing: border-box;*/
+	/*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;*/
+	/*font-family: 'Montserrat', sans-serif;*/
+	font-family: 'Fjalla One', sans-serif;
+	
+    
+	
+
 }
 
 a {
@@ -29,35 +53,364 @@ label {
 	display: block;
 }
 
-input, button, select, textarea {
+input[type=text], input[type=password],input[type=submit], input[type=button], button, select, textarea {
 	font-family: inherit;
 	font-size: inherit;
 	-webkit-padding: 0.4em 0;
 	padding: 0.4em;
-	margin: 0 0 0.5em 0;
+	/*margin: 0 0 0.5em 0;*/
 	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+	border: 2px solid #BCABAE;
+	border-radius: 10px;
+	padding-bottom: 2px;
+	
 }
-
+input[type=text], input[type=password]{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+input:focus {
+	border-color: #60495A;
+	outline: none !important;
+}
 input:disabled {
 	color: #ccc;
 }
 
 button {
-	color: #333;
-	background-color: #f4f4f4;
+	color: #FBFBFB;
+	background-color: #60495A;
 	outline: none;
+	border-radius: 10px;
+	width: 200px;
+	margin: auto;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+.centerbutton{
+	display: inherit;
+	/*display:block;*/
+    /*flex-direction: column;*/
+	margin: auto;
+}
+input[type=submit], input[type=button] {
+	color: #FBFBFB;
+	background-color: #60495A;
+	outline: none;
+	border-radius: 10px;
+	width: 200px;
+	margin-left: auto;
+	margin-right:auto;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	margin-top:5px;
 }
 
-button:disabled {
+/*button:disabled {
 	color: #999;
-}
+}*/
 
 button:not(:disabled):active {
-	background-color: #ddd;
+	background-color: #BCABAE;
 }
 
 button:focus {
-	border-color: #666;
+	border-color: #BCABAE;
 }
+button:hover{
+	background-color: #543F4E;
+}
+button:active{
+	transform: scale(0.98);
+	background-color: #60495A;
+}
+h1{
+	color:#60495A;
+}
+h2{
+	font-family: 'Electrolize', sans-serif;
+	color:#60495A;
+}
+/*p {
+	color:#084C61;
+}*/
+img {
+    display: inherit;
+	width: 200px;
+	max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 50%;*/
+}
+.container {  
+	box-sizing: border-box;
+    display: flex;
+	/*display:block;*/
+    flex-direction: column;
+    /*max-width: 500px;*/
+    margin: 0 auto;
+	margin-left: 0;
+	margin-right: 0;
+	width: 435px;
+	padding-left: 0;
+	padding-right: 0;
+	/*justify-content: center;*/
+  	/*align-items: center;*/
+
+	position: relative;
+	max-width: 380px;
+	  
+	
+	height: 100%;
+	background-color: #FBFBFB;
+	text-align: center;
+	
+}
+.questioncontainer {  
+    display: flex;
+	/*display:block;*/
+    flex-direction: column;
+	margin: 0 auto;
+    /*max-width: 500px;*/
+    
+	margin-left: 0;
+	margin-right: 0;
+	width: 435px;
+	padding-left: 0px;
+	padding-right: 0px;
+	
+  	/*align-items: center;*/
+	background-color: #FBFBFB;
+	position: relative;
+	max-width: 380px;
+	 
+	
+	
+	background-color: #FBFBFB;
+	text-align: center;
+
+}
+
+
+.formcontainer {  
+    display: flex;
+	/*display:block;*/
+    flex-direction: column;
+    /*max-width: 500px;*/
+    /*margin: 0 auto;*/
+	
+	
+	
+	padding-left: 0%;
+	/*justify-content: center;*/
+  	/*align-items: center;*/
+}
+.title{
+	text-align: center;
+}
+.questionaire{
+	display: flex;
+	flex-direction: column;
+	
+	/*margin-left: 0;
+	margin-right: 0;*/
+	width: 435px;
+	/*padding-left: 0;
+	padding-right: 0;*/
+}
+
+/* -------------SLIDER------------------------------*/
+
+.slidecontainer{
+	display: flex;
+    
+    /*max-width: 500px;
+   width: 435px;
+	width: 500px;*/
+	width: 360px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	padding-top: 10px;
+
+	
+}
+
+input[type=range] {
+	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+	width: 380px; /* Specific width is required for Firefox. */
+	background: transparent; /* Otherwise white in Chrome */
+	
+	
+	opacity: 0.7;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+  }
+  input[type=range]:hover {
+	opacity: 1;
+  }
+  input[type=range]:focus {
+	outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+  input[type=range]::-ms-track {
+	width: 100%;
+	cursor: pointer;
+  
+	/* Hides the slider so custom styles can be added */
+	background: transparent; 
+	border-color: transparent;
+	color: transparent;
+  }
+
+	/*----STYLING THUMB--------------------------------------------- */
+
+  /* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: 1px solid #000000;
+	height: 36px;
+	width: 16px;
+	border-radius: 3px;
+	background: #BCABAE;
+	cursor: pointer;
+	margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+	
+  }
+  
+  /* All the same stuff for Firefox */
+  input[type=range]::-moz-range-thumb {
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	border: 1px solid #000000;
+	height: 36px;
+	width: 16px;
+	border-radius: 3px;
+	background: #BCABAE;
+	cursor: pointer;
+  }
+  
+  /* All the same stuff for IE */
+  input[type=range]::-ms-thumb {
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	border: 1px solid #000000;
+	height: 36px;
+	width: 16px;
+	border-radius: 3px;
+	background: #BCABAE;
+	cursor: pointer;
+  }
+
+  /*----STYLING TRACK-------------------------------------------------*/
+
+
+  input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	background: #56A3A6;
+	border-radius: 1.3px;
+	border: 0.2px solid #010101;
+	
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+	background: #56A3A6;
+  }
+  
+  input[type=range]::-moz-range-track {
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+	background: #56A3A6;
+	border-radius: 1.3px;
+	border: 0.2px solid #010101;
+  }
+  
+  input[type=range]::-ms-track {
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	border-width: 16px 0;
+	color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+	background: #56A3A6;
+	border: 0.2px solid #010101;
+	border-radius: 2.6px;
+	box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+	background: #56A3A6;
+  }
+  input[type=range]::-ms-fill-upper {
+	background: #56A3A6;
+	border: 0.2px solid #010101;
+	border-radius: 2.6px;
+	*box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+	background: #56A3A6;
+  }
+  
+
+
+
+  
+ 
+ 
+ 
+ 
+ 
+  .padding{
+	  padding: 0;
+  }
+  input[type=text], input[type=password]{
+	  width: 360px;
+	  /*margin: 5px;*/
+	  margin-right: 10px;
+	  margin-left: 10px;
+  }
+  .wrapper{
+	  max-width: 380px;
+  }
+
+  .errormsg{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 75%;
+	vertical-align: text-top;
+	padding-left: 10px; 
+	padding-right: 10px; 
+	text-align: left; 
+	color: #56A3A6;
+  }
+  p{
+	  margin-bottom: 5px;
+	  margin-top: 5px;
+  }
+  .pageinfo{
+	
+	
+	text-align: left;
+	padding-left: 10px; 
+	padding-right: 10px; 
+	/*font-size: 18px;*/
+  }
+  /*input[type=checkbox]{
+	height: 25px;
+	width: 25px;
+	
+	border: 2px solid #BCABAE;
+	border-radius: 2px;
+  }
+  input[type=checkbox]:checked{
+	background-color: #60495A;
+  }
+*/

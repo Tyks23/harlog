@@ -11,7 +11,7 @@ et arendada kirjuta konsooli:
     (siis ootad vaatad äkki keegi tahab su koodi üle vaadata enne merge)
 
 
-    git push --set-upstream harlog \<nimi>(ainult siis kui oled 1000% kindel et midagi katki ei tee)
+    git push --set-upstream origin \<nimi>(ainult siis kui oled 1000% kindel et midagi katki ei tee)
     siis github.com-is pull request sama branchi peale
     ja ss ma vaatan kas ma tahan seda main projekti mergeda
 
