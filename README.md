@@ -36,3 +36,39 @@ librarys-
 
 
 ALTER TABLE users DROP COLUMN bad_requests;
+
+-------------------------------------------------------------------------
+
+Projekti eesmärk on õppijate kaasatuse mõõtmine. Projekti nimi on Harlog.
+
+*siia pildid
+
+Nagu projekti eesmärgist juba teada saab on lahendus loodud õppijate kaasatuse mõõtmiseks õppetöös.
+Õppetöös kaasatuse mõõtmine toimub Kuue ettemääratud emotsioonide põhise küsimuse vastuste analüüsimisest.
+Harlog võimaldab 'õpetajal' kasutada sessioone, millesse 'õppijad' saavad ruumi võtmetega ligi.
+
+Projekt on koostatud Tallinna Ülikooli Digitehnoloogiate Instituudi Informaatika kursuse suvepraktika raames.
+
+Kasutusel oli arenduskeskond: Visual Studio Code (Version 1.57)
+Kasutusel olid raamistikud ja lahendused: Svelte (3.38.2)
+                                          Node.js (14.17.1 LTS)
+                                          Express.js (4.17.1)
+                                          PostgreSQL (9.6)
+
+Projekti panustasid:    
+    Mattias Tüksammel
+    Ken Pikanõmme
+    Helena Migur
+
+*litsensid siia
+
+Paigaldusjuhend: Kuna arendus toimus täielikult VSC-is siis kirjeldan selle arenduskeskkonna ülesseadmist selles keskkonnas.
+1. On vaja installeerida Visual Studio Code, Node.ja ning PostgreSQL.
+2. Githubist on vaja tirida 'harlog' ning 'harlog backend'.
+3. Tuleb avada CMD ja navigeerida 'harlog' kaustas 'client' kausta.
+4. 'client' kaustas tuleb CMD terminali kirjutada 'npm install'.
+5. Kui 'npm install' on enda töö lõpetanud, tuleb konsooli sisestada 'npm run dev', mis käivitab front-end arendus serveri.
+6. Tuleb korrata 4. ja 5. sammu ,kuid 'harlog/client' kausta asemel tuleb navigeerida 'harlog backend/server' kausta ning 'npm run dev' asemel tuleb kirjutada 'node app.js', et käivitada back-end server.
+7. Andmebaasi seadistamiseks tuleb avada 'psql' konsool, mille leiab Windows-i otsimise funktsionaalsusega või postgre instaleerimise folderist.
+8. Andmebaasi seadistamise käsklused, mis tuleb sisestada konsooli leiab 'harlog backend' kausta 'README.md' dokumendist.
+9. Sellega on edukalt püsti seatud arenduskeskkond.
