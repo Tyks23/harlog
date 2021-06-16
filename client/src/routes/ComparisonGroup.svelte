@@ -1,4 +1,7 @@
 <script>
+import { group_outros } from "svelte/internal";
+
+
     
     let activity1 = false;
     let activity2 = false;
@@ -9,6 +12,7 @@
     let selectedGroup1 = {};
     let selectedActivity1 = {};
     let selectedParticipant1 = {};
+
 
     let selectedGroup2 = {};
     let selectedActivity2 = {};
@@ -34,7 +38,7 @@
             //push("/");
         }};
 
-        async function listActivities(){
+        async function listActivities(input){
         const response = await fetch("http://localhost:3000/listactivities", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
@@ -46,14 +50,14 @@
             },
             redirect: 'follow', // manual, *follow, error
             referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(selectedGroup1)
+            body: JSON.stringify(input)
         })
         if(response.ok){
             return await response.json();
             //push("/");
         }};
 
-        async function listParticipants(){
+        async function listParticipants(input){
         const response = await fetch("http://localhost:3000/listparticipants", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
@@ -65,7 +69,7 @@
             },
             redirect: 'follow', // manual, *follow, error
             referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(selectedActivity1)
+            body: JSON.stringify(input)
         });
                
         if(response.ok){
@@ -77,6 +81,7 @@
 <div class="container">
     <form>
         <label for="groups">Vali esimene grupp</label>
+        <!-- svelte-ignore a11y-no-onchange -->
         <select bind:value="{selectedGroup1.group_id}" on:change="{() => {activity1 = true;}}">
             <option>Select group</option>
             {#await listGroup()}
@@ -88,9 +93,10 @@
             {/await}                
         </select>
         {#if activity1}
+        <!-- svelte-ignore a11y-no-onchange -->
         <select bind:value="{selectedActivity1.activity_id}" on:change="{() => {participant1 = true;}}">
             <option>Select activity</option>
-            {#await listActivities()}
+            {#await listActivities(selectedGroup1)}
             <p>Loading activities...</p>
             {:then activities}
             {#each activities as activity}      
@@ -100,21 +106,22 @@
         </select>    
         {/if}    
         {#if participant1}
-        <select bind:value="{selectedParticipant1.activity_id}">
+        <select bind:value="{selectedParticipant1.part_id}">
             <option>Select participant </option>
-            {#await listParticipants()}
+            {#await listParticipants(selectedActivity1)}
             <p>Loading participants...</p>
             {:then participants}
             {#each participants as participant}      
-            <option>{participant.part_name}</option>
+            <option value="{participant.part_id}">{participant.part_name}</option>
             {/each}
             {/await}                
         </select>
         {/if}
     </form>
-
+    <button on:click="{() => {/*window.location.reload()*/console.log(selectedGroup1)}}" />
     <form>
         <label for="groups">Vali teine grupp</label>
+        <!-- svelte-ignore a11y-no-onchange -->
         <select bind:value="{selectedGroup2.group_id}" on:change="{() => {activity2 = true;}}">
             <option>Select group</option>
             {#await listGroup()}
@@ -126,6 +133,7 @@
             {/await}                
         </select>
         {#if activity2}
+        <!-- svelte-ignore a11y-no-onchange -->
         <select bind:value="{selectedActivity2.activity_id}" on:change="{() => {participant2 = true;}}">
             <option>Select activity</option>
             {#await listActivities()}
@@ -144,7 +152,7 @@
             <p>Loading participants...</p>
             {:then participants}
             {#each participants as participant}      
-            <option>{participant.part_name}</option>
+            <option value="{participant.part_id}">{participant.part_name}</option>
             {/each}
             {/await}                
         </select>
