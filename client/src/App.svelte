@@ -10,6 +10,7 @@ import QuestionPage from "./routes/QuestionPage.svelte";
 import ResultsGroup from "./routes/ResultsGroup.svelte";
 import ResultsActivity from "./routes/ResultsActivity.svelte";
 import ResultsParticipant from "./routes/ResultsParticipant.svelte";
+import ComparisonGroup from "./routes/ComparisonGroup.svelte";
 
 const routes = {'/': Homepage,
 '/userpanel': Userpanel, 
@@ -20,7 +21,8 @@ const routes = {'/': Homepage,
 '/questionpage' : QuestionPage,
 '/resultsgroup' : ResultsGroup,
 '/resultsactivity' : ResultsActivity,
-'/resultsparticipant' : ResultsParticipant };
+'/resultsparticipant' : ResultsParticipant,
+'/comparisongroup' : ComparisonGroup };
 </script>
 <div class="router-div">
 <Router {routes}/>
