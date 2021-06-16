@@ -1,6 +1,14 @@
 <script>
 import { push } from "svelte-spa-router";
-
+if(sessionStorage.getItem("token") == null) {
+           
+    // Redirect to login page
+    push("/");
+}
+function logout(){
+    sessionStorage.removeItem("token");
+    push("/");
+}
 
 
 let selectedGroup = {
@@ -30,31 +38,52 @@ async function getActivities(){
 }; 
 </script>
 <div class="container">
-    <h1>Harlog</h1>
+    
+    <img src="../pictures\logo.png" alt="Harlog logo">
+    <form class="container">
+    <h2 class="title">Tulemuste esitamine:</h2>        
+    
+    <p style="padding-left: 10px; padding-right: 10px; text-align: center;">Vali grupp mille tulemusi soovid näha:</p>
+    </form>
         <form>
-            <h1 class="title">Tulemuste esitamine:</h1>
             
-        </form>
-        <form>
-            <p>Vali grupp mille tulemusi soovid näha:</p>
             <ul class = "groupList">
                 {#await listGroup()}
                 <p>Loading groups...</p>
                 {:then groups}
                 {#each groups as group}
-                <button on:click="{() => {sessionStorage.setItem('group_id', group.group_id); push('/resultsgroup')}}">{group.group_name}</button> 
+                <button on:click="{() => {sessionStorage.setItem('group_id', group.group_id), sessionStorage.setItem('group_name', group.group_name); push('/resultsgroup')}}">{group.group_name}</button> 
                               
                 {/each}
                 {/await}                
             </ul>             
         </form>
+        <hr />
+        <button on:click|preventDefault="{() => {push('/userpanel')}}">Tagasi</button>
+        <button on:click|preventDefault="{logout}">Logi välja</button>
     </div>
 
 
 <style>
-.container {  
-    display: flex;
-    flex-direction: column;
-}
-        
+ul {
+       display: flex;
+       margin: auto;
+       
+        flex-direction: column;
+        list-style-type: none;
+        padding-left: 0%;
+        /*width: 90%; 
+        list-style-type:none;
+        margin:auto;
+        padding:0;
+        position:relative;
+        left:5%;
+        width: 100%;
+        list-style: none;*/
+    }
+    hr {
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }    
 </style>

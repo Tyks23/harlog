@@ -41,14 +41,18 @@
     </div>
     
     <style>
-    .container {  
-        display: flex;
-        flex-direction: column;
-    }
+    
+    
     .boxtext{       
         width: 180px;
-        border: 15px solid rgb(92, 0, 128);
+        border: 15px solid #56A3A6;
         padding: 50px;
         margin: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #084C61;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
     }
     </style>

@@ -1,6 +1,15 @@
 <script>
     import 'charts.css';
     import { push } from "svelte-spa-router";
+    if(sessionStorage.getItem("token") == null) {
+           
+        // Redirect to login page
+        push("/");
+    }
+    function logout(){
+        sessionStorage.removeItem("token");
+        push("/");
+    }
 let selectedParticipant = {
     part_id : sessionStorage.getItem('part_id')
 };
@@ -91,11 +100,15 @@ let activities = {};
 
 </script>
 <div class="container">
-    <h1>Harlog</h1>
-
+    <img src="../pictures\logo.png" alt="Harlog logo">
+    <h2>Osaleja tulemused</h2>
+    <p class="pageinfo">Grupp: {sessionStorage.group_name}</p>
+    <p class="pageinfo">Nimi: {sessionStorage.part_name}</p>
     {#each Object.keys(activities) as activity}
-        <p>{activities[activity].name}</p>
-        <table id="bar-example-6" class="charts-css bar show-labels">
+        <hr />
+        <p style="margin-bottom: 130px; text-align: left; padding-left: 10px; color:#60495A; font-family: 'Electrolize', sans-serif; font-weight: bold;">Tegevus: {activities[activity].name}</p>
+        <div class="resultcontainer">
+        <table id="my-chart" class="charts-css column show-labels data-spacing-20 show-primary-axis ">
             <caption> Bar Example #6 </caption>
             <thead>
                 <tr>
@@ -105,7 +118,7 @@ let activities = {};
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row"> emot 1 </th>
+                    <th scope="row" style="color: #084C61; font-size: 75%;">Käitumuslik</th>
                     <td style="--size:{activities[activity].emotion1};">
                         <span class="data"
                             >{activities[activity].emotion1.toFixed(2)}</span
@@ -113,7 +126,7 @@ let activities = {};
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"> emot 2 </th>
+                    <th scope="row" style="color: #084C61; font-size: 75%;">Emotsionaalne</th>
                     <td style="--size:{activities[activity].emotion2}">
                         <span class="data"
                             >{activities[activity].emotion2.toFixed(2)}</span
@@ -121,7 +134,7 @@ let activities = {};
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"> emot 3 </th>
+                    <th scope="row" style="color: #084C61; font-size: 75%;">Kognitiivne</th>
                     <td style="--size:{activities[activity].emotion3}">
                         <span class="data"
                             >{activities[activity].emotion3.toFixed(2)}</span
@@ -130,9 +143,74 @@ let activities = {};
                 </tr>
             </tbody>
         </table>
+        </div>
     {/each}
+    <hr />
+    <button on:click|preventDefault="{() => {push('/resultsactivity')}}">Tagasi</button>
+    <button on:click|preventDefault="{logout}">Logi välja</button>
 </div>
 
 <style>
-    
+    .resultcontainer {
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+        width: 360px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #my-chart.column {
+        height: 50px;
+        max-width: 360px;
+        color: #FBFBFB;
+        
+        margin: 0 auto;
+        width: 435px;
+        
+        /*box-sizing: border-box;*/
+        /*display: flex;
+        /*display:block;*/
+        /*flex-direction: column;
+        /*max-width: 500px;*/
+        
+        /*margin-left: 0;
+        margin-right: 0;
+        /*width: 435px;
+        padding-left: 0;
+        padding-right: 0;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+
+        /*position: relative;
+        
+        
+        
+        
+        background-color: #FBFBFB;
+        text-align: center;*/
+    }
+    /* Single Dataset */
+    #my-chart:not(.multiple) tbody tr:nth-of-type(3n + 1) td {
+        background-color: #084C61;
+    }
+    #my-chart:not(.multiple) tbody tr:nth-of-type(3n + 2) td {
+        background-color: #0C7292;
+    }
+    #my-chart:not(.multiple) tbody tr:nth-of-type(3n + 3) td {
+        background-color: #1097C0;
+    }
+    hr {
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #my-chart tbody td {
+        transform-origin: bottom;
+        animation: revealing-bars 4s linear;
+        animation-iteration-count: 1;
+    }
+    @keyframes revealing-bars {
+        0%  { transform: scaleY( 0 ); }
+        15% { transform: scaleY( 1 ); }
+    }
 </style>

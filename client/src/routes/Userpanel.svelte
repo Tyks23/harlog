@@ -15,9 +15,9 @@
     </script>
     <div class="container">
         <img src="../pictures\logo.png" alt="Harlog logo">
-        <h2 class="title">Küsitluste haldamine</h2>
+        <h2 class="title">Sessiooni haldamine</h2>
         
-        <button on:click|preventDefault="{() => {push('/startsession')}}">LOO UUS KÜSITLUS</button>
+        <button on:click|preventDefault="{() => {push('/startsession')}}">LOO UUS SESSIOON</button>
         <button on:click|preventDefault="{() => {push('/resultssession')}}">TULEMUSED</button>
         <button on:click|preventDefault="{logout}">Logi välja</button>
     </div>

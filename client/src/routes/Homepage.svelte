@@ -116,23 +116,34 @@ async function enterQuiz(){
     haveErrorsQuiz = false;
 }
 async function getRoomkey(){
-    const response = await fetch("http://localhost:3000/getroomkey", {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(roomKey) // body data type must match "Content-Type" header
-        });
-        if(response.ok){
-            roomExists = true;
-            quizParticipant.activity_id = (await response.json()).activity_id;
+    let haveErrorsRoom = false;
+    if(roomKey === ''){
+        document.getElementById('error-room').innerHTML = "Sisesta ruumi võti!"
+        haveErrorsRoom= true;
+    }
+    else{
+        document.getElementById('error-room').innerHTML = ""
+    }   
+    if(haveErrorsRoom === false){
+        const response = await fetch("http://localhost:3000/getroomkey", {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow', // manual, *follow, error
+                referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                body: JSON.stringify(roomKey) // body data type must match "Content-Type" header
+            });
+            if(response.ok){
+                roomExists = true;
+                quizParticipant.activity_id = (await response.json()).activity_id;
+            }
         }
+    haveErrorsRoom = false;            
 }
 
 
@@ -150,15 +161,15 @@ async function getRoomkey(){
     
     
     <div>
-        <h2 class="title">Küsitluses osalemine</h2>
+        <h2 class="title">Õpilane:</h2>
         <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Sisesta ruumivõti:</p>
         <form class="container">
-        <input type="text" placeholder="Võti" bind:value="{roomKey.roomkey}">
+        <input type="text" placeholder="Võti" bind:value="{roomKey.roomkey}"><span class="errormsg" id="error-room"></span>
         <button on:click|preventDefault={getRoomkey}>SISESTA</button>
         </form>
     </div>
     <div>
-        <h2 class="title">Küsitluste haldamine</h2>
+        <h2 class="title">Õpetaja:</h2>
         <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Logi sisse</p>
         <form class="container">
         <input type="text" placeholder="Kasutajatunnus" bind:value="{user.name}"><span class="errormsg" id="error-user"></span>
@@ -170,7 +181,7 @@ async function getRoomkey(){
 {:else}
 <div>
     
-    <h2 class="title">Küsitluses osalemine</h2>
+    <h2 class="title">Sessioonis osalemine</h2>
     <form class="container">
     <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Sisesta nimi</p>
     <input type="text" placeholder="Nimi" bind:value="{quizParticipant.part_name}"><span class="errormsg" id="error-part_name"></span>

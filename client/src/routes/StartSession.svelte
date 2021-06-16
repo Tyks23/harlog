@@ -135,20 +135,20 @@
     <div class="container">
         <img src="../pictures\logo.png" alt="Harlog logo">
         <form class = "container">
-            <h2 class="title">Alusta küsitlust:</h2>
-            <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Tegevuse nimi:</p>
+            <h2 class="title">Alusta sessiooni:</h2>
+            <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Tunni tegevus:</p>
             <input type="text" placeholder="Tegevuse nimi" bind:value="{activity.activity_name}"><span class="errormsg" id="error-activity"></span>
-            <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Toa võti:</p>
+            <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Ruumi võti:</p>
             <input type="text" placeholder="Võti" bind:value="{activity.roomkey}"><span class="errormsg" id="error-key"></span>
-            <div style="padding-left: 10px; padding-right: 10px; text-align: left; margin-top: 5px; margin-bottom: 5px;" class="switchspan">
+            <!--<div style="padding-left: 10px; padding-right: 10px; text-align: left; margin-top: 5px; margin-bottom: 5px;" class="switchspan">
                 <label class="switch">
                     
                     <input type="checkbox"on:click="{() => {activity.incognito = !activity.incognito}}">
                     <span class="slider round"></span>
                 </label>
-                <span>Anonüümne küsitlus &nbsp </span>
+                <span>Anonüümne sessioon &nbsp </span>
             
-            </div>
+            </div> --->
         </form>
         <form class= "container">
             <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Vali grupp, millega tegevust alustada:</p>
@@ -166,7 +166,9 @@
             </div>  
             <p style="padding-left: 10px; padding-right: 10px; text-align: left;">Uue grupi loomine:</p>  
             <input type="text" bind:value="{group.group_name}"><span class="errormsg" id="error-creategroup"></span> 
-            <button on:click|preventDefault="{createGroup}">Loo grupp</button>   
+            <button on:click|preventDefault="{createGroup}">Loo grupp</button>
+            <hr />
+            <button on:click|preventDefault="{() => {push('/userpanel')}}">Tagasi</button> 
             <button on:click|preventDefault="{logout}">Logi välja</button>
             
             
@@ -266,5 +268,9 @@ input:checked + .slider:before {
     display:inline;
     
 }   
-        
+hr {
+    width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}            
     </style>
