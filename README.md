@@ -41,8 +41,13 @@ ALTER TABLE users DROP COLUMN bad_requests;
 
 Projekti eesmärk on õppijate kaasatuse mõõtmine. Projekti nimi on Harlog.
 
-*siia pildid
 https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-21-03.png
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-26-19.png
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-28.png
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-40.png
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-59.png
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-30-31.png
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-32-28.png
 
 Nagu projekti eesmärgist juba teada saab on lahendus loodud õppijate kaasatuse mõõtmiseks õppetöös.
 Õppetöös kaasatuse mõõtmine toimub Kuue ettemääratud emotsioonide põhise küsimuse vastuste analüüsimisest.
@@ -53,14 +58,14 @@ Projekt on koostatud Tallinna Ülikooli Digitehnoloogiate Instituudi Informaatik
 Kasutusel oli arenduskeskond: Visual Studio Code (Version 1.57)
 
 Kasutusel olid raamistikud ja lahendused: 
-Svelte (3.38.2)
-Node.js (14.17.1 LTS)
-Express.js (4.17.1)
+Svelte (3.38.2), 
+Node.js (14.17.1 LTS), 
+Express.js (4.17.1), 
 PostgreSQL (9.6)
 
 Projekti panustasid:    
-Mattias Tüksammel
-Ken Pikanõmme
+Mattias Tüksammel, 
+Ken Pikanõmme, 
 Helena Migur
 
 *litsensid siia
