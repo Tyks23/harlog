@@ -147,6 +147,21 @@
                     5
                 );
             }
+                let chartList = document.getElementById('charts');
+                let appendable = document.createElement('tr'); 
+                
+                for (let i = 0; i < 3; i++) { 
+                    let appendable2 = document.createElement('td');
+                    let numb = activityEmotions[`emotion${i+1}`];
+                    appendable2.setAttribute('style', `--size:${numb}`);
+                    appendable2.textContent = activityEmotions[`emotion${i+1}`];    
+                    appendable.appendChild(appendable2);
+                    console.log(appendable2);
+                    
+                }
+                           
+                chartList.appendChild(appendable);
+                   
         }
     }
 </script>
@@ -207,7 +222,7 @@
     </form>
     <button
         on:click={() => {
-            /*window.location.reload()*/ console.log(selected1);
+            window.location.reload();
         }}
     />
     <button
@@ -222,14 +237,9 @@
             class="charts-css column multiple data-spacing-3"
         >
             <caption> Column Example #5 </caption>
-            <tbody>
-                <tr>
-                    <td style="--size:{activityEmotions.emotion1};" />
-                    <td style="--size:{activityEmotions.emotion2};" />
-                    <td style="--size:{activityEmotions.emotion3};" />
-                </tr>
-
-                <tr />
+            <tbody id="charts">
+            
+              
             </tbody>
         </table>
     </div>
