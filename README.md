@@ -50,15 +50,17 @@ Harlog võimaldab 'õpetajal' kasutada sessioone, millesse 'õppijad' saavad ruu
 Projekt on koostatud Tallinna Ülikooli Digitehnoloogiate Instituudi Informaatika kursuse suvepraktika raames.
 
 Kasutusel oli arenduskeskond: Visual Studio Code (Version 1.57)
-Kasutusel olid raamistikud ja lahendused: Svelte (3.38.2)
-                                          Node.js (14.17.1 LTS)
-                                          Express.js (4.17.1)
-                                          PostgreSQL (9.6)
+
+Kasutusel olid raamistikud ja lahendused: 
+Svelte (3.38.2)
+Node.js (14.17.1 LTS)
+Express.js (4.17.1)
+PostgreSQL (9.6)
 
 Projekti panustasid:    
-    Mattias Tüksammel
-    Ken Pikanõmme
-    Helena Migur
+Mattias Tüksammel
+Ken Pikanõmme
+Helena Migur
 
 *litsensid siia
 
