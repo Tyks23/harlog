@@ -68,7 +68,6 @@
                 {}
             );
             data.forEach(({ activity_id, answer, activity_name }) => {
-                //console.log(row);
                 activities[activity_id].answers.push(answer);
                 activities[activity_id].name = activity_name;
             });

@@ -75,6 +75,9 @@
             if(response.ok){
                 push("/");
             }
+            if(response.status === 400){
+                document.getElementById('error-passwordval').innerHTML = "Kasutajatunnus või e-mail juba kasutusel!"
+            }    
         }
         haveErrors = false;
 
