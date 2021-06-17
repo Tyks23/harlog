@@ -42,6 +42,7 @@ ALTER TABLE users DROP COLUMN bad_requests;
 Projekti eesmärk on õppijate kaasatuse mõõtmine. Projekti nimi on Harlog.
 
 *siia pildid
+https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-21-03.png
 
 Nagu projekti eesmärgist juba teada saab on lahendus loodud õppijate kaasatuse mõõtmiseks õppetöös.
 Õppetöös kaasatuse mõõtmine toimub Kuue ettemääratud emotsioonide põhise küsimuse vastuste analüüsimisest.
