@@ -37,7 +37,7 @@
     
     <div class="questioncontainer">
       <img src="../pictures\logo.png" alt="Harlog logo">
-      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Pühendusin ainult õppimisele</p>
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selles tegevuses pühendusin ainult õppimisele</p>
       <div  class="slidecontainer">
         <input type="range" min="1" max="6" bind:value="{rangeArr.answer1}">
         
@@ -47,7 +47,7 @@
         <p class="leftmarking">Ei nõustu</p>
         <p class="rightmarking">Nõustun</p>
       </div>  
-      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Teesklesin osalemist</p>
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selles tegevuses teesklesin osalemist</p>
       <div class="slidecontainer">
         <input type="range" min="1" max="6"  bind:value="{rangeArr.answer2}">
       </div>
@@ -56,7 +56,7 @@
         <p class="leftmarking">Ei nõustu</p>
         <p class="rightmarking">Nõustun</p>
       </div>  
-      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Mulle meeldis õppida</p>
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selles tegevuses meeldis mulle õppida</p>
       <div class="slidecontainer">
         <input type="range" min="1" max="6"  bind:value="{rangeArr.answer3}">
       </div>
@@ -65,7 +65,7 @@
         <p class="leftmarking">Ei nõustu</p>
         <p class="rightmarking">Nõustun</p>
       </div>  
-      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selle tegevuse ajal kartsin pisut / olin segaduses</p>
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selle tegevuse ajal kartsin pisut või olin segaduses</p>
       <div class="slidecontainer">
         
         <input type="range" min="1" max="6"  bind:value="{rangeArr.answer4}">
@@ -75,7 +75,7 @@
         <p class="leftmarking">Ei nõustu</p>
         <p class="rightmarking">Nõustun</p>
       </div>  
-      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Sain õpitust aru</p>
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Selles tegevuses sain õpitust aru</p>
       <div class="slidecontainer">
         
         <input type="range" min="1" max="6"  bind:value="{rangeArr.answer5}">
@@ -85,7 +85,7 @@
         <p class="leftmarking">Ei nõustu</p>
         <p class="rightmarking">Nõustun</p>
       </div>  
-      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Sain midagi uut teada / harjutada</p>
+      <p style="padding-left: 10px; padding-right: 10px; text-align: left; ">Sain midagi uut teada või harjutada</p>
       <div class="slidecontainer">
         
         <input type="range" min="1" max="6"  bind:value="{rangeArr.answer6}">
