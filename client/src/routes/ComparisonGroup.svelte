@@ -9,6 +9,8 @@
 
     let activities = {};
 
+    let store = writable(0);
+
     let data;
 
     let selected1 = {
@@ -165,8 +167,8 @@
         }
     }
 </script>
-
-<div class="container">
+<div class="onetime-container">
+<div class="onetime-container">
     <form>
         <label for="groups">Vali esimene grupp</label>
         <!-- svelte-ignore a11y-no-onchange -->
@@ -175,6 +177,7 @@
             on:change={() => {
                 activity1 = true;
             }}
+            
         >
             <option value={null}>Select group</option>
             {#await listGroup()}
@@ -186,18 +189,20 @@
             {/await}
         </select>
         {#if activity1}
+            
             <!-- svelte-ignore a11y-no-onchange -->
             <select
-                bind:value={selected1.activity_id}
                 on:change={() => {
-                    participant1 = true;
+                    participant1 = true;                   
                 }}
+                on:change={selected1.activity_id = this.value}
             >
                 <option value={null}>Select activity</option>
                 {#await listActivities(selected1)}
                     <p>Loading activities...</p>
                 {:then activities}
                     {#each activities as activity}
+                        
                         <option value={activity.activity_id}
                             >{activity.activity_name}</option
                         >
@@ -206,7 +211,8 @@
             </select>
         {/if}
         {#if participant1}
-            <select bind:value={selected1.part_id}>
+            <!-- svelte-ignore a11y-no-onchange -->
+            <select on:change={selected1.part_id = this.value}>
                 <option value={null}>Select participant </option>
                 {#await listParticipants(selected1)}
                     <p>Loading participants...</p>
@@ -230,25 +236,49 @@
             getComparisonData(selected1);
         }}
     />
-
-    <div>
-        <table
-            id="column-example-5"
-            class="charts-css column multiple data-spacing-3"
-        >
-            <caption> Column Example #5 </caption>
-            <tbody id="charts">
-            
-              
-            </tbody>
-        </table>
-    </div>
 </div>
-
+<br>
+<div>
+    <table
+        id="column-example-5"
+        class="charts-css column multiple data-spacing-3"
+    >
+        <caption> Column Example #5 </caption>
+        <tbody id="charts">
+        
+          
+        </tbody>
+    </table>
+</div>
+</div>
 <style>
     #column-example-5 {
         height: 40px;
         max-width: 300px;
         margin: 0 auto;
     }
+    .onetime-container {  
+	box-sizing: border-box;
+    display: flex;
+	/*display:block;*/
+    flex-direction: column;
+    /*max-width: 500px;*/
+    margin: 0 auto;
+	margin-left: 0;
+	margin-right: 0;
+	width: 900px;
+	padding-left: 0;
+	padding-right: 0;
+	/*justify-content: center;*/
+  	/*align-items: center;*/
+
+	position: relative;
+	
+	  
+	
+	height: 100%;
+	background-color: #FBFBFB;
+	text-align: center;
+	
+}
 </style>
