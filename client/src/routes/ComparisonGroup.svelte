@@ -1,7 +1,17 @@
 <script>
+    import "charts.css";
     import { group_outros } from "svelte/internal";
     import { writable } from "svelte/store";
-
+    import { push } from "svelte-spa-router";
+    if(sessionStorage.getItem("token") == null) {
+           
+           // Redirect to login page
+           push("/");
+       }
+    function logout(){
+        sessionStorage.removeItem("token");
+        push("/");
+    }
     let participants = {};
 
     let activity1 = false;
@@ -167,8 +177,10 @@
         }
     }
 </script>
-<div class="onetime-container">
-<div class="onetime-container">
+<div class="container">
+<div class="container">
+    <img src="../pictures\logo.png" alt="Harlog logo">
+    <h2 class="title">Tulemuste võrdlus:</h2>
     <form>
         <label for="groups">Vali esimene grupp</label>
         <!-- svelte-ignore a11y-no-onchange -->
@@ -230,40 +242,43 @@
         on:click={() => {
             window.location.reload();
         }}
-    />
+    >Reset</button>
     <button
         on:click={() => {
             getComparisonData(selected1);
         }}
-    />
+    >Lisa võrdlusesse</button>
 </div>
 <br>
-<div>
-    <table
-        id="column-example-5"
-        class="charts-css column multiple data-spacing-3"
-    >
+<p style="margin-bottom: 130px; text-align: left; padding-left: 10px; color:#60495A; font-family: 'Electrolize', sans-serif; font-weight: bold; "></p>
+<div class="resultcontainer">
+    
+    <table id="my-chart" class="charts-css column multiple data-spacing-3 show-labels show-primary-axis">
         <caption> Column Example #5 </caption>
         <tbody id="charts">
         
           
         </tbody>
     </table>
+  
 </div>
+<hr />
+<button on:click|preventDefault="{() => {push('/userpanel')}}">Tagasi</button>
+<button on:click|preventDefault="{logout}">Logi välja</button>
 </div>
 <style>
-    #column-example-5 {
+    /*#column-example-5 {
         height: 40px;
         max-width: 300px;
         margin: 0 auto;
-    }
-    .onetime-container {  
+    }*/
+    /*.onetime-container {  
 	box-sizing: border-box;
     display: flex;
 	/*display:block;*/
-    flex-direction: column;
+    /*flex-direction: column;
     /*max-width: 500px;*/
-    margin: 0 auto;
+    /*margin: 0 auto;
 	margin-left: 0;
 	margin-right: 0;
 	width: 900px;
@@ -272,13 +287,106 @@
 	/*justify-content: center;*/
   	/*align-items: center;*/
 
-	position: relative;
+	/*position: relative;
 	
 	  
 	
 	height: 100%;
 	background-color: #FBFBFB;
 	text-align: center;
-	
+    }*/
+    .resultcontainer {
+        display: flex;
+        flex-direction: column;
+        height: 80px;
+        width: 360px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }	
+
+    hr {
+        width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    select{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 360px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #my-chart.column {
+            height: 50px;
+            max-width: 360px;
+            color: #FBFBFB;
+            
+            margin: 0 auto;
+            width: 435px;
+            
+            /*box-sizing: border-box;*/
+            /*display: flex;
+            /*display:block;*/
+            /*flex-direction: column;
+            /*max-width: 500px;*/
+            
+            /*margin-left: 0;
+            margin-right: 0;
+            /*width: 435px;
+            padding-left: 0;
+            padding-right: 0;
+            /*justify-content: center;*/
+            /*align-items: center;*/
+
+            /*position: relative;
+            
+            
+            
+            
+            background-color: #FBFBFB;
+            text-align: center;*/
+        }
+        #my-chart {
+  --color-1: #084C61;
+  --color-2: #7f959c;
+  --color-3: #1097C0;
+  --color-4: rgba(230, 30, 30, 0.6);
+  --color-5: rgba(230, 30, 30, 1.0);
+  --color-6: rgba(230, 30, 30, 1.0);
+  --color-7: rgba(230, 30, 30, 0.8);
+  --color-8: rgba(230, 30, 30, 0.6);
+  --color-9: rgba(230, 30, 30, 0.4);
+  --color-10: rgba(230, 30, 30, 0.2);
 }
+        /* Multiple Datasets */
+        /*#my-chart.multiple tbody tr td:nth-of-type(3n + 1) td {
+            background-color: #084C61;
+        }
+        #my-chart.multiple tbody tr td:nth-of-type(3n + 2) {
+            background-color: #7f959c;
+        }
+        #my-chart.multiple tbody tr td:nth-of-type(3n + 3) {
+            background-color: #1097C0;
+        }*/
+        hr {
+            width: 360px;
+            margin-left: auto;
+            -right: auto;
+        /*height: 1px; 
+        background-color: #BCABAE;*/
+        
+        }
+        /*#my-chart tbody td {
+            transform-origin: bottom;
+            animation: revealing-bars 4s linear;
+            animation-iteration-count: 1;
+        }
+        @keyframes revealing-bars {
+            0%  { transform: scaleY( 0 ); }
+            15% { transform: scaleY( 1 ); }
+        }*/
+       
 </style>
