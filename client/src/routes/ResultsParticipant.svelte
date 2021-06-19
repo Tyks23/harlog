@@ -11,7 +11,8 @@
         push("/");
     }
 let selectedParticipant = {
-    part_id : sessionStorage.getItem('part_id')
+    part_id : sessionStorage.getItem('part_id'),
+    group_id : sessionStorage.getItem('group_id')
 };
 
 let activities = {};
