@@ -93,6 +93,7 @@
         }
     }
 
+    
     let activityEmotions = {
         emotion1: 0,
         emotion2: 0,
@@ -116,11 +117,13 @@
     };
 
     async function getComparisonData(input) {
+        console.log("45645646", input);
         const parsed = Object.entries(input).reduce((acc, [key, value]) => {
-            if (value !== null) return { ...acc, [key]: value };
+            
+            if (value !== null && value !== 'null') return { ...acc, [key]: value };
             return acc;
         }, {});
-
+//null returns as "null"
         const response = await fetch(
             "http://localhost:3000/getcomparisondata",
             {
@@ -140,6 +143,14 @@
         if (response.ok) {
             data = (await response.json()).rows;
             console.log(data);
+            let counter = 0;
+           
+            let totalEmotion = {
+                emotion1 : 0,
+                emotion2 : 0,
+                emotion3 : 0
+            };
+
             for (let i of data) {
                 activityEmotions.emotion1 = i.emotion1 = getAvgOfCols(
                     i.answer,
@@ -158,15 +169,26 @@
                     4,
                     5
                 );
+                console.log(activityEmotions);
+
+                totalEmotion.emotion1 += activityEmotions.emotion1;
+                totalEmotion.emotion2 += activityEmotions.emotion2;
+                totalEmotion.emotion3 += activityEmotions.emotion3;
+                counter += 1;
             }
+            totalEmotion.emotion1 /= counter;
+            totalEmotion.emotion2 /= counter;
+            totalEmotion.emotion3  /= counter;
+            console.log(totalEmotion);
+
                 let chartList = document.getElementById('charts');
                 let appendable = document.createElement('tr'); 
                 
                 for (let i = 0; i < 3; i++) { 
                     let appendable2 = document.createElement('td');
-                    let numb = activityEmotions[`emotion${i+1}`];
+                    let numb = totalEmotion[`emotion${i+1}`];
                     appendable2.setAttribute('style', `--size:${numb}`);
-                    appendable2.textContent = activityEmotions[`emotion${i+1}`];    
+                    appendable2.textContent = totalEmotion[`emotion${i+1}`];    
                     appendable.appendChild(appendable2);
                     console.log(appendable2);
                     
