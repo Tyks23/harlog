@@ -45,7 +45,7 @@
             
         
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            console.log(re.test(user.email)); 
+             
             if (re.test(user.email) === false){
                 haveErrors = true;
                 document.getElementById('error-email').innerHTML = " Pole korrektne meiliaadress!"
@@ -56,8 +56,7 @@
         }      
         
             
-        console.log(user);
-        console.log(JSON.stringify(user));
+        
         if (haveErrors ===false){
             const response = await fetch("http://localhost:3000/register", {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.

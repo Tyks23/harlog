@@ -2,7 +2,7 @@
 
 <script>
     import {push} from "svelte-spa-router";
-    console.log(sessionStorage);
+    
     if(sessionStorage.getItem("token") == null) {
            
            // Redirect to login page

@@ -2,7 +2,7 @@
     
 
 <script async> 
-    console.log(sessionStorage);
+    
     if(sessionStorage.getItem("token") == null) {
            
            // Redirect to login page
@@ -66,8 +66,7 @@
     
     async function createActivity(group_id){
     
-        console.log(activity);
-        console.log(activity.activity_name);
+        
         let haveErrors = false;
         if(typeof activity.activity_name === 'undefined'|| activity.activity_name === ""){
             document.getElementById('error-activity').innerHTML = "Sisesta tegevus!"
@@ -80,9 +79,7 @@
             document.getElementById('error-key').innerHTML = "Sisesta toa võti!"
             haveErrors= true;
         }
-        else{
-            document.getElementById('error-key').innerHTML = ""
-        }
+      
         if(haveErrors === false){
             
             activity.group_id = group_id;
@@ -100,6 +97,9 @@
                 referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
                 body: JSON.stringify(activity) // body data type must match "Content-Type" header
             });
+            if(response.status === 403){
+                document.getElementById('error-key').innerHTML = "Toavõti kasutusel"
+            }
             if(response.ok){
                 
                 sessionStorage.setItem('roomkey', activity.roomkey);

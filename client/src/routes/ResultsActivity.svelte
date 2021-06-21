@@ -65,7 +65,7 @@ let participants = {};
     )
     if (response.ok) {
             data = (await response.json()).rows;
-            console.log(data);
+           
             participants = Array.from(
                 new Set(data.map((item) => item.part_id))
             ).reduce(
@@ -73,7 +73,7 @@ let participants = {};
                 {}
             );
             data.forEach(({ part_id, answer, part_name }) => {
-                //console.log(row);
+            
                 participants[part_id].answers.push(answer);
                 participants[part_id].name = part_name;
             });
@@ -90,11 +90,11 @@ let participants = {};
 
             
 
-            console.log(activityEmotions);
+            
             activityEmotions.emotion1 /= counter;
             activityEmotions.emotion2 /= counter;
             activityEmotions.emotion3 /= counter;
-            console.log(activityEmotions);
+            
         }})();
 
 

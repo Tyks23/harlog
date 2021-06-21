@@ -66,7 +66,6 @@ let activities = {};
     )
     if (response.ok) {
             data = (await response.json()).rows;
-            console.log(data);
             activities = Array.from(
                 new Set(data.map((item) => item.activity_id))
             ).reduce(
@@ -74,7 +73,6 @@ let activities = {};
                 {}
             );
             data.forEach(({ activity_id, answer, activity_name }) => {
-                //console.log(row);
                 activities[activity_id].answers.push(answer);
                 activities[activity_id].name = activity_name;
             });
@@ -89,13 +87,13 @@ let activities = {};
                 value.emotion3 = getAvgOfCols(answers, 4, 5);
             });
 
-            console.log(activities);
+           
 
-            console.log(activityEmotions);
+            
             activityEmotions.emotion1 /= counter;
             activityEmotions.emotion2 /= counter;
             activityEmotions.emotion3 /= counter;
-            console.log(activityEmotions);
+            
         }})();
 
 

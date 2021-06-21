@@ -11,8 +11,7 @@
       answer6 : 1
     };
     async function sendAnswer(){
-        console.log(rangeArr);
-        console.log(Array.from(rangeArr));
+        
         const response = await fetch("http://localhost:3000/sendanswer", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin

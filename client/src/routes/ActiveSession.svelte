@@ -37,7 +37,8 @@
         <p>Toa kood: </p>
         <h2 class="boxtext">{sessionStorage.getItem('roomkey')}</h2>
 
-        <button on:click|preventDefault="{deleteRoomkey}">LÕPETA KÜSITLUS</button>
+        <button on:click|preventDefault="{deleteRoomkey}">LÕPETA SESSIOON</button>
+        <button on:click="{() => {push('/startsession')}}">KOOSTA LISA SESSIOON</button>
     </div>
     
     <style>

@@ -58,15 +58,14 @@ async function login(){
             if(response.status === 403){
                 document.getElementById('error-login').innerHTML = "Vigane kasutajatunnus või parool!"
             }
-            console.log(response);
+            
     }
     haveErrors = false;            
 }
 
 async function enterQuiz(){
     let haveErrorsQuiz = false;
-    console.log(quizParticipant);
-    console.log(quizParticipant.part_email);
+    
 
     if(typeof quizParticipant.part_name === 'undefined'){
         document.getElementById('error-part_name').innerHTML = "Sisesta nimi!"

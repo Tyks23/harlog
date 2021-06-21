@@ -82,13 +82,13 @@
                 value.emotion3 = getAvgOfCols(answers, 4, 5);
             });
 
-            console.log(activities);
+           
 
-            console.log(activityEmotions);
+           
             activityEmotions.emotion1 /= counter;
             activityEmotions.emotion2 /= counter;
             activityEmotions.emotion3 /= counter;
-            console.log(activityEmotions);
+            
         }
     })();
 </script>

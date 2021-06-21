@@ -117,7 +117,7 @@
     };
 
     async function getComparisonData(input) {
-        console.log("45645646", input);
+        
         const parsed = Object.entries(input).reduce((acc, [key, value]) => {
             
             if (value !== null && value !== 'null') return { ...acc, [key]: value };
@@ -142,7 +142,7 @@
         );
         if (response.ok) {
             data = (await response.json()).rows;
-            console.log(data);
+            
             let counter = 0;
            
             let totalEmotion = {
@@ -169,7 +169,7 @@
                     4,
                     5
                 );
-                console.log(activityEmotions);
+                
 
                 totalEmotion.emotion1 += activityEmotions.emotion1;
                 totalEmotion.emotion2 += activityEmotions.emotion2;
@@ -179,7 +179,7 @@
             totalEmotion.emotion1 /= counter;
             totalEmotion.emotion2 /= counter;
             totalEmotion.emotion3  /= counter;
-            console.log(totalEmotion);
+            
 
                 let chartList = document.getElementById('charts');
                 let appendable = document.createElement('tr'); 
@@ -190,7 +190,7 @@
                     appendable2.setAttribute('style', `--size:${numb}`);
                     appendable2.textContent = totalEmotion[`emotion${i+1}`];    
                     appendable.appendChild(appendable2);
-                    console.log(appendable2);
+                    
                     
                 }
                            
