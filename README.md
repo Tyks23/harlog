@@ -1,5 +1,8 @@
 
 -------------------------------------------------------------------------
+ Projektiga seotud repod:
+https://github.com/Tyks23/harlog-backend
+https://github.com/Tyks23/harlog-public-
 
 Projekti eesmärk on õppijate kaasatuse mõõtmine. Projekti nimi on Harlog.
 
