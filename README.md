@@ -8,12 +8,12 @@ Projekti eesmärk on õppijate kaasatuse mõõtmine. Projekti nimi on Harlog.
 
 ![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-21-03.png)
 
-https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-26-19.png
-https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-28.png
-https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-40.png
-https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-59.png
-https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-30-31.png
-https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-32-28.png
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-26-19.png)
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-28.png)
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-40.png)
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-59.png)
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-30-31.png)
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-32-28.png)
 
 Nagu projekti eesmärgist juba teada saab on lahendus loodud õppijate kaasatuse mõõtmiseks õppetöös.
 Õppetöös kaasatuse mõõtmine toimub Kuue ettemääratud emotsioonide põhise küsimuse vastuste analüüsimisest.
