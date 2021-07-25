@@ -6,7 +6,8 @@ https://github.com/Tyks23/harlog-public-
 
 Projekti eesmärk on õppijate kaasatuse mõõtmine. Projekti nimi on Harlog.
 
-<img title="a title" alt="Alt text" src="https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-21-03.png>
+![Alt text](https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-21-03.png)
+
 https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-26-19.png
 https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-28.png
 https://github.com/Tyks23/harlog/blob/main/Screenshots/chrome_2021-06-17_12-29-40.png
